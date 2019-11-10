@@ -21,7 +21,7 @@ Neo is an open-source TCP application protocol used to control multiple computer
 * File Encryption / Decryption
 * Keystroke Injection
 * Mouse Stroke Injection
-* Interpreter (Print Execution Result On Server)
+* Interpreter (Print Result to Server)
 * Keyboard & Mouse Lock / Unlock
 * Password Recovery ([LaZagne Project](https://github.com/AlessandroZ/LaZagne))
 * Privilege Escelation
@@ -29,12 +29,10 @@ Neo is an open-source TCP application protocol used to control multiple computer
 * Messagebox
 * Open Websites
 * System Actions
-    * Shutdown
-    * Restart
-    * Standby
-    * Logout
-
-
+  * Shutdown
+  * Restart
+  * Logout
+  * Standby
 
 ![Neo](https://github.com/Alvin-22/Neo/blob/master/~build/images/Neo.PNG "Available commands in Neo")
 
