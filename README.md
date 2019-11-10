@@ -7,7 +7,6 @@ Neo is an open-source TCP application protocol used to control multiple computer
 ### Features
 * TCP Network Stream (IPv4)
 * Deflate Compression & AES128 Encryption
-* Multi Threaded
 * Automatic Complete Documentation
 * Stable Remote Shell
 * Desktop Stream (Multi Monitor)
@@ -30,10 +29,10 @@ Neo is an open-source TCP application protocol used to control multiple computer
 * Messagebox
 * Open Websites
 * System Actions
-..* Shutdown
-..* Restart
-..* Standby
-..* Logout
+    * Shutdown
+    * Restart
+    * Standby
+    * Logout
 
 
 
