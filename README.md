@@ -2,7 +2,40 @@
 Free, open-source remote administration tool for windows
 
 ### Description
-Neo is an open-source project used to control multiple computers transfering requested data over to the server from clients without interference by the client user. Supporting large amount of features with a whide range of possibilities. Neo demonstrates the possibilities of python used in conjunction with other open-source projects. 
+Neo is an open-source TCP application protocol used to control multiple computers transfering requested data over to the server without interference by the client user. Supporting large amount of features with a whide range of possibilities. Neo demonstrates the possibilities of python used in conjunction with other open-source projects.
+
+### Features
+* TCP Network Stream (IPv4)
+* Deflate Compression & AES128 Encryption
+* Multi Threaded
+* Automatic Complete Documentation
+* Stable Remote Shell
+* Desktop Stream (Multi Monitor)
+* Cam Stream (Multi Monitor)
+* Audio Listener (Mic & Loopback Audio)
+* Audio Output
+* Keylogger
+* Screenshot
+* Cam Screenshot
+* Upload (Execute)
+* Download (Execute)
+* File Encryption / Decryption
+* Keystroke Injection
+* Mouse Stroke Injection
+* Interpreter (Print Execution Result On Server)
+* Keyboard & Mouse Lock / Unlock
+* Password Recovery ([LaZagne Project](https://github.com/AlessandroZ/LaZagne))
+* Privilege Escelation
+* Clearing Windows Logs
+* Messagebox
+* Open Websites
+* System Actions
+..* Shutdown
+..* Restart
+..* Standby
+..* Logout
+
+
 
 ![Neo](https://github.com/Alvin-22/Neo/blob/master/~build/images/Neo.PNG "Available commands in Neo")
 
