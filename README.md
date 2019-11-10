@@ -1,5 +1,5 @@
 ## Neo
-Free, open-source remote administration tool for windows
+Free, open-source remote access tool for windows
 
 ### Description
 Neo is an open-source TCP application protocol used to control multiple computers transfering requested data over to the server without interference by the client user. Supporting large amount of features with a whide range of options. Neo demonstrates the possibilities of python used in conjunction with other open-source projects.
