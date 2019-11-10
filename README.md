@@ -10,9 +10,12 @@ Simply globally available commands are used for control on the program level, sh
 Simply install all neccesary python packages in ~build/requirements folder
 
 Running server.py:
-* __python server.py__ ARGUMENTS: -b -ip [server IP] -p [server port]<br>
+* __python server.py__ ARGUMENTS: __-b -ip [server IP] -p [server port]__<br>
 The server.py script has three flags available. "-b" flag binds all sockets & make it really easy to proceed, automatically listens for clients, "-ip" can be used to specify your servers IP with being localhost as default. "-p" flag will specify what port you want to listen on, by default port 1200 is used.
 
 Running client.py:
-* __python client.py__ ARGUMENTS: -ip [server IP] -p [server port]<br>
+* __python client.py__ ARGUMENTS: __-ip [server IP] -p [server port]__<br>
 The client script is abit easier, you can specify the IP & port of the server you're running server.py from. By default the ip is localhost & port is 1200.
+
+## Notes
+Neo is open source & i'm not responsible for the use of the project. Please don't use it for illegal purposes.
