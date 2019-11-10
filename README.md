@@ -21,7 +21,7 @@ Neo is an open-source TCP application protocol used to control multiple computer
 * File Encryption / Decryption
 * Keystroke Injection
 * Mouse Action Injection
-* Interpreter (Print Result to Server)
+* Python Interpreter (Print Result to Server)
 * Keyboard & Mouse Lock / Unlock
 * Password Recovery ([LaZagne Project](https://github.com/AlessandroZ/LaZagne))
 * Privilege Escelation
