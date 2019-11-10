@@ -20,7 +20,7 @@ Neo is an open-source TCP application protocol used to control multiple computer
 * Download (Execute)
 * File Encryption / Decryption
 * Keystroke Injection
-* Mouse Stroke Injection
+* Mouse Action Injection
 * Interpreter (Print Result to Server)
 * Keyboard & Mouse Lock / Unlock
 * Password Recovery ([LaZagne Project](https://github.com/AlessandroZ/LaZagne))
