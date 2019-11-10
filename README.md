@@ -1,14 +1,14 @@
-# Neo
-## Free, Open-Source Remote Administration Tool for Windows
+## Neo
+#### Free, Open-Source Remote Administration Tool for Windows
 
 ![Neo](https://github.com/Alvin-22/Neo/blob/master/~build/images/Neo.PNG "Available commands in Neo")
 
-## Context
+### Context
 Neo is two scripts used seperately, but work together transfering data over TCP sockets. The server script manages all the connections made from clients, when a client connects to the server the client can be seen by the server, interacted with & controled. Neo has two modes, shell & session. Shell is simply to manage clients in an overview manner, while session is interacting specifically with Z client. An active session means a reverse shell & access to all session specific commands.
 
 Simply globally available commands are used for control on the program level, shell commands are for client management level & session commands are on a client specific level.
 
-## Running Neo
+### Running Neo
 Simply install all neccesary python packages in ~build/requirements folder
 
 Running server.py:
