@@ -1,4 +1,6 @@
 # Neo
+## Free, Open-Source Remote Administration Tool for Windows
+
 ![Neo](https://github.com/Alvin-22/Neo/blob/master/~build/images/Neo.PNG "Available commands in Neo")
 
 ## Context
@@ -17,5 +19,4 @@ Running client.py:
 * __python client.py__ ARGUMENTS: __-ip [server IP] -p [server port]__<br>
 The client script is abit easier, you can specify the IP & port of the server you're running server.py from. By default the ip is localhost & port is 1200.
 
-## Notes
-Neo is open source & i'm not responsible for the use of the project. Please don't use it for illegal purposes.
+_Please don't use Neo for illegal purposes_
