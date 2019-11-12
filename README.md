@@ -26,7 +26,7 @@ Neo is an open-source TCP application protocol used to control multiple computer
 * Password Recovery ([LaZagne Project](https://github.com/AlessandroZ/LaZagne))
 * Privilege Escelation
 * Clearing Windows Logs
-* Messagebox
+* Show Messagebox
 * Open Websites
 * System Actions
   * Shutdown
