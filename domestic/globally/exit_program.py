@@ -9,6 +9,6 @@ def exit_program():
   status_message(f'Exiting {state["name"]}', 'danger', {'dots': True, 'end': True})
 
   for i in range(len(state['sockets']['clients'][0])):
-    delete_client(i, False, False)
+    delete_client(i, False)
 
   os._exit(0)

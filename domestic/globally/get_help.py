@@ -171,7 +171,7 @@ help_obj = {
   },
   'audio_2': {
     'type': 'Session',
-    'usage': 'audio --run (--ip [ip] & --port [port])',
+    'usage': 'audio --run (--quiet) (--ip [ip] & --port [port])',
     'description': 'Run audio module'
   },
   'talk_2': {

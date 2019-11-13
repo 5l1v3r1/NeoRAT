@@ -3,7 +3,7 @@ from domestic.utility.get_timestamp import *
 from domestic.global_state import *
 
 
-def delete_client(client, write_stdout=True, notifications=True):
+def delete_client(client, write_stdout=True):
   state['sockets']['clients'][0][client].close()
   state['sockets']['clients'][0][client] = None
   
@@ -17,5 +17,3 @@ def delete_client(client, write_stdout=True, notifications=True):
 
   if write_stdout:
     status_message('Client successfully deleted', 'success')
-  elif state['options']['notices']['notice'] and notifications:
-    state['settings']['notifier'].show_toast('Disconnection Notice!', f'Username: {username}', duration=4)

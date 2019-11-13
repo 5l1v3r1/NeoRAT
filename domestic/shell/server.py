@@ -75,9 +75,6 @@ def listening(host, port, stdout=True):
         for index, item in enumerate(state['sockets']['clients']):
           item.append(data_list[index])
 
-        if state['options']['notices']['notice']:
-          state['settings']['notifier'].show_toast('Connection Notice!', f'Username: {data["username"]}\nAddress: {data["address"]}', duration=4)
-
         if state['options']['notices']['email-notice']:
           send_email(
                     state['options']['notices']['email-data']['email'],

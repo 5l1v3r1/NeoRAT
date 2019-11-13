@@ -118,8 +118,6 @@ def cam(data):
 	if resolution:
 		assert state['session']['active']
 		
-		data['resolution'] = tuple([int(x) for x in resolution.split(',')])
-
 		if ip and port:
 			data['ip'], data['port'] = ip, int(port)
 		else:
@@ -139,7 +137,9 @@ def cam(data):
 		if recognize:
 			del data['recognize']
 		
-		threading.Thread(target=cam_action, args=(data['resolution'], recognize, fit), daemon=True).start()
+		del data['resolution']
+		
+		threading.Thread(target=cam_action, args=(tuple([int(x) for x in resolution.split(',')]), recognize, fit), daemon=True).start()
 		session_message(data)
 	elif ip and port:
 		if state['sockets']['modules']['cam'][0] is None:

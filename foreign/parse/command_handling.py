@@ -69,7 +69,7 @@ def command_handling(conn, data):
 	elif message == 'stream':
 		send_data(conn, stream(data['ip'], data['port'], data['resolution'], data['monitor'], data['fps']), settings)
 	elif message == 'cam':
-		send_data(conn, cam(data['ip'], data['port'], data['resolution'], data['monitor'], data['fps']), settings)
+		send_data(conn, cam(data['ip'], data['port'], data['monitor'], data['fps']), settings)
 	elif message == 'audio':
 		send_data(conn, audio(data['ip'], data['port']), settings)
 	elif message == 'talk':

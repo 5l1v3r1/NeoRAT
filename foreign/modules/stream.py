@@ -45,7 +45,7 @@ def stream_action(ip, port, resolution, monitor, fps):
       frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
       if fps:
-        cv2.putText(frame, f'{1.0 / (time.time() - last_time):.2f}', (10, 25), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 255, 255), 2)
+        cv2.putText(frame, f'{1.0 / (time.time() - last_time):.2f}', (10, 25), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 0), 2)
 
       frame = pickle.dumps(frame)
       frame = zlib.compress(frame, 9)

