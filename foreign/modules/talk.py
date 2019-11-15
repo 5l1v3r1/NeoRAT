@@ -14,19 +14,18 @@ def talk_action(ip, port):
   s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
   s.connect((ip, port))
 
-  CHUNK = 81920
-  FORMAT = pyaudio.paInt16
-  CHANNELS = 2
-  RATE = 44100
-  p = pyaudio.PyAudio()
-  try:
-    stream = p.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=False, output=True, frames_per_buffer=CHUNK)
-  except:
-    stream = p.open(format=FORMAT, channels=1, rate=RATE, input=False, output=True, frames_per_buffer=CHUNK)
   headersize = state['settings']['headersize']
   encryption = state['settings']['encryption']
   encoding = state['settings']['encoding']
   mode = [True, 0, b'']
+
+  p = pyaudio.PyAudio()
+  CHUNK = 81920
+  FORMAT = pyaudio.paInt16
+  RATE = 44100
+  CHANNELS = p.get_default_output_device_info()['maxOutputChannels']
+  
+  stream = p.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=False, output=True, frames_per_buffer=CHUNK)
 
   while True:
     try:

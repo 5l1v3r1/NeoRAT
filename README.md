@@ -48,10 +48,5 @@ Running client.py:
 * __python client.py__ -ip [server IP] -p [server port]<br>
 * Optionally you can specify IP & port of host server. Default IP: localhost | Default port: 1200.
 
-### Known Issues
-* Threaded commands may silently fail. These consist of all modules (stream, cam stream, audio & talk), keylogger & keystroke.
-* Using "unbind" for modules may leave sockets alive because of slow updating, if this happens use "close [index]".
-* Audio & talk modules support either 1 or 2 audio channels, but if server & client doesn't have the same number of channels the sound may appear distorted.
-
 
 _Please don't use Alvin for illegal purposes_

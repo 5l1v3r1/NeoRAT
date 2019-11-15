@@ -16,9 +16,9 @@ def list_clients():
   else:
     for index, addr in enumerate(clients_list):
       user_data = state['sockets']['clients'][2][index]
-      all_clients.append([index, user_data['monitors'], user_data['cams'], user_data['microphone'], f"{user_data['username']}", user_data['address'], user_data['os'], user_data['antivirus'], user_data['location'], user_data['privileges']])
+      all_clients.append([index, user_data['monitors'], user_data['cams'], user_data['io-channels'], f"{user_data['username']}", user_data['address'], user_data['os'], user_data['antivirus'], user_data['location'], user_data['privileges']])
     
-    status_message(tabulate.tabulate(all_clients, headers=['Index', 'Monitors', 'Cams', 'Microphone', 'Username@Hostname', 'Address', 'Operating System', 'Antivirus', 'Location', 'Privileges']), 'pure', {'end': True})
+    status_message(tabulate.tabulate(all_clients, headers=['Index', 'Monitors', 'Cams', 'I/O Channels', 'Username@Hostname', 'Address', 'Operating System', 'Antivirus', 'Location', 'Privileges']), 'pure', {'end': True})
   
   print()
   status_message(None, 'program')
