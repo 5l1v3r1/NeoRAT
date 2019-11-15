@@ -3,7 +3,6 @@ cryptography
 opencv-python
 pillow
 desktopmagic
-win10toast
 pynput
 requests
 tabulate

