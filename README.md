@@ -5,7 +5,7 @@ Free, open-source remote access tool for windows
 Alvin is an open-source TCP application protocol used to control multiple computers transfering requested data over to the server without interference by the client user. Supporting large amount of features with a whide range of options. Alvin demonstrates the possibilities of python used in conjunction with other open-source projects.
 
 * The server script is supported cross platform
-* The client script is supported for windows
+* The client script is supported on windows
 
 ### Features
 * TCP Network Stream (IPv4)
