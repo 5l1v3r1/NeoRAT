@@ -13,7 +13,7 @@ from domestic.make.make_file import *
 from domestic.global_state import *
 
 
-def session_message(message, piped_data=True, loading_text='loading...'):  
+def session_message(message, piped_data=True, loading_text='loading...'):
   data = session_wait((state['session']['socket'], message, True), loading_text)
 
   text_mode = validate_dict_key(data, 'text_mode')

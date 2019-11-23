@@ -1,13 +1,7 @@
-import multiprocessing
-import win32con
 import win32gui
-import time
+import win32con
 
 from foreign.utility.terminal_pipe import *
-
-
-def standby_action():
-  win32gui.SendMessage(win32con.HWND_BROADCAST, win32con.WM_SYSCOMMAND, 0xF170, 2)
 
 
 def system(action_type, extra_data):
@@ -18,10 +12,7 @@ def system(action_type, extra_data):
   elif action_type == 'logout':
     return {'message': terminal_pipe('shutdown /l /f', extra_data[0], extra_data[1])}    
   elif action_type == 'standby':
-    standby_thread = multiprocessing.Process(target=standby_action, daemon=True)
-    standby_thread.start()
-    time.sleep(5)
-    standby_thread.terminate()
+    win32gui.SendMessage(win32con.HWND_BROADCAST, win32con.WM_SYSCOMMAND, win32con.SC_MONITORPOWER, 2)
     return {'message': 'Successfully activated standby mode', 'text_mode': 'success'}
   else:
     raise Exception('Error message')

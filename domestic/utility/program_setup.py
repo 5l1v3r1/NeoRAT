@@ -1,10 +1,11 @@
 import threading
 import argparse
 
+from domestic.utility.get_io_channels import *
 from domestic.modules.socket_handler import *
 from domestic.utility.status_message import *
-from domestic.session.session_queue import *
 from domestic.utility.text_to_ascii import *
+from domestic.session.session_queue import *
 from domestic.utility.write_error import *
 from domestic.global_state import *
 from domestic.shell.server import *
@@ -17,6 +18,7 @@ def program_setup():
   args = parser.parse_args()
 
   try:
+    get_io_channels()
     threading.Thread(target=listening, args=(args.ipv4, str(args.port), False), daemon=True).start()
     for index, module in enumerate([*state['sockets']['modules']]):
       bind_socket(args.ipv4, str(args.port + (index + 1)), module, False)
@@ -30,5 +32,7 @@ def program_setup():
   status_message(text_to_ascii(state['name']), 'pure', {'end': True})
   print()
   status_message(state['description'], 'pure', {'end': True})
+  print()
+  status_message(state['author'], 'pure', {'end': True})
   print()
   status_message(None, 'program')
