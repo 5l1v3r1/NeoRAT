@@ -10,6 +10,8 @@ state = {
   'settings': {
     'dynamic': {
       'is-loading': False,
+      'alias-size': None,
+      'alias-data': None,
       'queue': []
     },
     'debug': False,
