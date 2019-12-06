@@ -27,6 +27,7 @@ Alvin is an open-source TCP application protocol used to control multiple comput
 * Python Interpreter (Print Result to Server)
 * Keyboard & Mouse Lock / Unlock
 * Password Recovery ([LaZagne Project](https://github.com/AlessandroZ/LaZagne))
+* Browser History Recovery ([browserhistory](https://github.com/kcp18/browserhistory))
 * Privilege Escelation
 * Clearing Windows Logs
 * Show Messagebox

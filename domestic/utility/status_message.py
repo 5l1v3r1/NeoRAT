@@ -80,7 +80,7 @@ def status_message(data, status, options={}):
       else:
         print(f'{Fore.BLUE}{name}{Style.RESET_ALL}{Fore.RED}>{Style.RESET_ALL}', end='')
     else:
-      raise Exception('Invalid color selection.')
+      raise Exception('Invalid color selection')
     
     if index == (len(messages) -1) and status != 'program':
       print(end=end_result)

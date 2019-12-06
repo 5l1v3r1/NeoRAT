@@ -1,1 +1,1 @@
-blacklisted ip addresses
+blacklisted ip addresses (support DNS addresses)

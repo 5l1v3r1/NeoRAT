@@ -53,6 +53,11 @@ def listening(host, port, stdout=True):
       if os.path.isfile(f'{state["root"]}/{state["settings"]["folders"]["parent"]}/blacklist.txt'):
         blacklist = read_file(f'{state["root"]}/{state["settings"]["folders"]["parent"]}/blacklist.txt').decode(state['settings']['encoding']).strip().split('\n')
         for ip in blacklist:
+          try:
+            ip = socket.gethostbyname(ip)
+          except Exception as err:
+            write_error(err)
+
           if addr[0] == ip:
             add_client = False
 

@@ -1,5 +1,5 @@
-from domestic.make.make_directories import *
 from domestic.utility.status_message import *
+from domestic.make.make_directories import *
 from domestic.utility.get_filename import *
 from domestic.global_state import *
 

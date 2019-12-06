@@ -61,7 +61,7 @@ def command_handling(conn, data):
 	elif message == 'system':
 		send_data(conn, system(data['action_type'], (data['safe'], data['safe_timeout'])), settings)
 	elif message == 'recover':
-		send_data(conn, recover(), settings)
+		send_data(conn, recover(data['action_type'], data['force']), settings)
 	elif message == 'messagebox':
 		send_data(conn, messagebox(data['title'], data['text'], data['style']), settings)
 	elif message == 'website':

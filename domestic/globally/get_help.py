@@ -141,8 +141,8 @@ help_obj = {
   },
   'recover': {
     'type': 'Session',
-    'usage': 'recover --password (--quiet)',
-    'description': 'Recover stored passwords'
+    'usage': 'recover --password | --history (--quiet) (--force)',
+    'description': 'Recover passwords / browser history'
   },
   'obfuscate': {
     'type': 'Session',
