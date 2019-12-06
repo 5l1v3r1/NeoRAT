@@ -14,8 +14,7 @@ def main():
   program_setup()
 
   while True:
-    data = command_argument_parser(alias_parser(input()))
-    command_validation(data)
+    command_validation(command_argument_parser(alias_parser(input())))
 
 
 if __name__ == '__main__':
