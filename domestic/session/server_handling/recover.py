@@ -23,7 +23,6 @@ def recover(message):
     if quiet:
       del message['quiet']
 
-    print(message)
     data = session_message(message, False)
 
     if quiet is None:
@@ -53,7 +52,6 @@ def recover(message):
     if quiet:
       del message['quiet']
 
-    print(message)
     data = session_message(message, False)
 
     if quiet is None:
