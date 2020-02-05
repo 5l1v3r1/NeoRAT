@@ -27,7 +27,6 @@ def stream_action(resolution, recognize, fit):
 
 		stream_id = random.randint(0, 100000)
 		record = state['options']['information-gathering']['record']['stream']
-
 		client, addr = state['sockets']['modules']['stream'][0].accept()
 		client_obj = (client, username, addr)
 		state['sockets']['modules']['stream'][1].append(client_obj)

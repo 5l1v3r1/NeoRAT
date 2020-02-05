@@ -6,7 +6,7 @@ state = {
   'description': 'A Windows remote access tool application supporting\n'
                 + 'a whide range of powerful & easy to use commands\n'
                 + 'along with a stable reverse shell. [USE: \'HELP\']',
-  'author': 'Authors Github: https://github.com/alvin-22',
+  'author': 'Authors Github: https://github.com/Alvin-22',
   'settings': {
     'dynamic': {
       'is-loading': False,
@@ -52,8 +52,8 @@ state = {
   },
   'options': {
     'mode': {
-      'safe': True,
-      'silent': True,
+      'safe': False,
+      'silent': False,
     },
     'validation': {
       'duplicates': True,

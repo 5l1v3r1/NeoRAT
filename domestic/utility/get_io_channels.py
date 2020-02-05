@@ -6,15 +6,38 @@ from domestic.global_state import *
 def get_io_channels():
   try:
     p = pyaudio.PyAudio()
+    CHUNK = 81920
+    FORMAT = pyaudio.paInt16
+    RATE = 44100
   except:
     pass
   else:
     try:
-      state['settings']['io-channels'][0] = str(p.get_default_input_device_info()['maxInputChannels'])
+      stream = p.open(format=FORMAT, channels=2, rate=RATE, input=True, output=False, frames_per_buffer=CHUNK)
+      stream.stop_stream()
+      stream.close()
+      state['settings']['io-channels'][0] = '2'
     except:
-      pass
-    
-    try:
-      state['settings']['io-channels'][1] = str(p.get_default_output_device_info()['maxOutputChannels'])
+      try:
+        stream = p.open(format=FORMAT, channels=1, rate=RATE, input=True, output=False, frames_per_buffer=CHUNK).stop_stream().close()
+        stream.stop_stream()
+        stream.close()
+        state['settings']['io-channels'][0] = '1'
+      except:
+        pass
+      
+    try:  
+      stream = p.open(format=FORMAT, channels=2, rate=RATE, input=False, output=True, frames_per_buffer=CHUNK)
+      stream.stop_stream()
+      stream.close()
+      state['settings']['io-channels'][1] = '2'
     except:
-      pass
+      try:
+        stream = p.open(format=FORMAT, channels=1, rate=RATE, input=False, output=True, frames_per_buffer=CHUNK)
+        stream.stop_stream()
+        stream.close()
+        state['settings']['io-channels'][1] = '1'
+      except:
+        pass
+
+    p.terminate()

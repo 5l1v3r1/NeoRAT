@@ -29,11 +29,15 @@ def talk_action():
     CHUNK = 81920
     FORMAT = pyaudio.paInt16
     RATE = 44100
-    CHANNELS = p.get_default_input_device_info()['maxInputChannels']
+    CHANNELS = 2
 
-    stream = p.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, output=False, frames_per_buffer=CHUNK)
+    try:    
+      stream = p.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, output=False, frames_per_buffer=CHUNK)
+    except:
+      CHANNELS = 1
+      stream = p.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, output=False, frames_per_buffer=CHUNK)
+
     record = state['options']['information-gathering']['record']['talk']
-
     client, addr = state['sockets']['modules']['talk'][0].accept()
     client_obj = (client, username, addr)
     state['sockets']['modules']['talk'][1].append(client_obj)
