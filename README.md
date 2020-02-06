@@ -6,21 +6,21 @@ Neo is an open-source TCP application protocol used to control multiple computer
 
 ## Installation
 #### **Command prompt 1**
-___
 * git clone https://github.com/Alvin-22/Neo.git
 * cd Neo
 * pip install -r requirements.txt
 * pipwin install pyaudio
 * python server.py
+
 #### **Command prompt 2**
 * cd Neo
 * python client.py
 
 ## EXE installation
 #### **Command prompt 1 (server install)**
-___
 * cd Neo
 * pyinstaller -F -i [server icon path] [server script path]
+
 #### **Command prompt 2 (client install)**
 * cd Neo
 * pyinstaller -F -w -i [client icon path] [client script path]
@@ -58,7 +58,6 @@ The difference between the EXE installations is that the client script is window
   * Standby
 
 ## Documentation
-___
 Neo operates in two modes, the first is what's called the "shell" which is the client management mode, controlling things like listing clients, deleting clients & entering session mode with clients. The second mode is the "session" mode, this is the personal interaction mode with Z client, this gives you a reverse shell along with additional commands for a more powerful data collecting experience, this would for example be streaming the clients desktop, webcam or intercepting their audio communications.
 #### **How to construct commands in Neo**
 ___
