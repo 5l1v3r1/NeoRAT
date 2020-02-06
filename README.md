@@ -44,7 +44,6 @@ The difference between the EXE installations is that the client script is window
 * File Encryption / Decryption
 * Keystroke & Mouse Action Injection
 * Python Interpreter (Print Result to Server)
-* Keyboard & Mouse Lock / Unlock
 * Password Recovery ([LaZagne Project](https://github.com/AlessandroZ/LaZagne))
 * Browser History Recovery ([browserhistory](https://github.com/kcp18/browserhistory))
 * Privilege Escelation
