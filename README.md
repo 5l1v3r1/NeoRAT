@@ -2,7 +2,7 @@
 Free, open-source remote access tool for Windows.
 
 ## Description
-NeoRAT is a command to control server, accepting clients to connect, when connected you have the freedom to do anything & everything without the interference of suspicious windows, as a silent background process with the only intention being to serve whatever data requested, this can be a live feed of the clients desktop screen, webcam or listening in to their conversations. NeoRAT can also be used as a botnet, running threaded custom scripts on every connected client simultaneously.
+NeoRAT is the successor of Eagle-Eyes, providing a more stable & organized experience. NeoRAT is built for C2 of clients & easy ways of providing reliable & feature rich data gathering techniques.
 
 ## Installation
 * git clone https://github.com/Alvin-22/NeoRAT.git && cd NeoRAT

@@ -3,9 +3,9 @@ from binary.encrypt_data import *
 
 state = {
   'name': 'NeoRAT',
-  'description': 'A Windows remote access tool application supporting\n'
-                + 'a whide range of powerful & easy to use commands\n'
-                + 'along with a stable reverse shell. [USE: \'HELP\']',
+  'description': 'NeoRAT is the successor of Eagle-Eyes, providing a more stable & organized\n'
+               + 'experience. NeoRAT is built for C2 of clients & easy ways of providing\n'
+               + 'reliable & feature rich data gathering techniques. [USE: \'HELP\']',
   'author': 'Authors Github: https://github.com/Alvin-22',
   'settings': {
     'dynamic': {
