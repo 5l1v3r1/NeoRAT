@@ -1,28 +1,28 @@
-## Neo
+## NeoRAT
 Free, open-source remote access tool for Windows.
 
 ## Description
-Neo is a command to control server, accepting clients to connect, when connected you have the freedom to do anything & everything without the interference of suspicious windows, as a silent background process with the only intention being to serve whatever data requested, this can be a live feed of the clients desktop screen, webcam or listening in to their conversations. Neo can also be used as a botnet, running threaded custom scripts on every connected client simultaneously.
+NeoRAT is a command to control server, accepting clients to connect, when connected you have the freedom to do anything & everything without the interference of suspicious windows, as a silent background process with the only intention being to serve whatever data requested, this can be a live feed of the clients desktop screen, webcam or listening in to their conversations. NeoRAT can also be used as a botnet, running threaded custom scripts on every connected client simultaneously.
 
 ## Installation
-* git clone https://github.com/Alvin-22/Neo.git && cd Neo
+* git clone https://github.com/Alvin-22/NeoRAT.git && cd NeoRAT
 * pip install -r requirements.txt && pipwin install pyaudio
 
 #### **Command prompt 1**
-* cd Neo
+* cd NeoRAT
 * python server.py
 
 #### **Command prompt 2**
-* cd Neo
+* cd NeoRAT
 * python client.py
 
 ## EXE installation
 #### **Command prompt 1 (server install)**
-* cd Neo
+* cd NeoRAT
 * pyinstaller -F -i [server icon path] [server script path]
 
 #### **Command prompt 2 (client install)**
-* cd Neo
+* cd NeoRAT
 * pyinstaller -F -w -i [client icon path] [client script path]
 
 The difference between the EXE installations is that the client script is windowless (-w), becoming a background process operation without the interference of the user.
@@ -57,8 +57,8 @@ The difference between the EXE installations is that the client script is window
   * Standby
 
 ## Documentation
-Neo operates in two modes, the first is what's called the "shell" which is the client management mode, controlling things like listing clients, deleting clients & entering session mode with clients. The second mode is the "session" mode, this is the personal interaction mode with Z client, this gives you a reverse shell along with additional commands for a more powerful data collecting experience, this would for example be streaming the clients desktop, webcam or intercepting their audio communications.
-#### **How to construct commands in Neo**
+NeoRAT operates in two modes, the first is what's called the "shell" which is the client management mode, controlling things like listing clients, deleting clients & entering session mode with clients. The second mode is the "session" mode, this is the personal interaction mode with Z client, this gives you a reverse shell along with additional commands for a more powerful data collecting experience, this would for example be streaming the clients desktop, webcam or intercepting their audio communications.
+#### **How to construct commands in NeoRAT**
 ___
 Each command will be parsed & return a dictionary, the syntax for how to construct your commands correctly is as follows, first is the main command also known as the message which is the inital string, then for every argument to the command is prefixed with double dash (--). When dealing with indexes, it's all 0-based, consider 0 the first one. Commands will not care if the letters are lower / higher case unless it's specifically needed & will provide different output, an example of this is when using messagebox command, were you will need to specify the text to display, then the letter casing is taken into consideration.
 
@@ -266,4 +266,4 @@ ___
 * --port [port]
   * The port of the server. Default is 1200.
 ___
-_Please don't use Neo for illegal purposes_
+_Please don't use NeoRAT for illegal purposes_

