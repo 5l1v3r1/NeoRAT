@@ -6,21 +6,21 @@ Neo is an open-source TCP application protocol used to control multiple computer
 
 ## Installation
 #### **Command prompt 1**
+___
 * git clone https://github.com/Alvin-22/Neo.git
 * cd Neo
 * pip install -r requirements.txt
 * pipwin install pyaudio
 * python server.py
-___
 #### **Command prompt 2**
 * cd Neo
 * python client.py
 
 ## EXE installation
 #### **Command prompt 1 (server install)**
+___
 * cd Neo
 * pyinstaller -F -i [server icon path] [server script path]
-___
 #### **Command prompt 2 (client install)**
 * cd Neo
 * pyinstaller -F -w -i [client icon path] [client script path]
@@ -58,14 +58,15 @@ The difference between the EXE installations is that the client script is window
   * Standby
 
 ## Documentation
-Neo operates in two modes, the first is what's called the "shell" which is the client management mode, controlling things like listing clients, deleting clients & entering session mode with clients. The second mode is the "session" mode, this is the personal interaction mode with Z client, this gives you a reverse shell along with additional commands for a more powerful data collecting experience, this would for example be streaming the clients desktop, webcam or intercepting their audio communications.
 ___
+Neo operates in two modes, the first is what's called the "shell" which is the client management mode, controlling things like listing clients, deleting clients & entering session mode with clients. The second mode is the "session" mode, this is the personal interaction mode with Z client, this gives you a reverse shell along with additional commands for a more powerful data collecting experience, this would for example be streaming the clients desktop, webcam or intercepting their audio communications.
 #### **How to construct commands in Neo**
+___
 Each command will be parsed & return a dictionary, the syntax for how to construct your commands correctly is as follows, first is the main command also known as the message which is the inital string, then for every argument to the command is prefixed with double dash (--). When dealing with indexes, it's all 0-based, consider 0 the first one. Commands will not care if the letters are lower / higher case unless it's specifically needed & will provide different output, an example of this is when using messagebox command, were you will need to specify the text to display, then the letter casing is taken into consideration.
 
 An example of a command: image --screenshot --monitor 0
-___
 #### **Commands available in both shell & session (globally)**
+___
 * help
   * Show all available commands & their expected arguments. Optional arguments being surrounded by pareparentheses while brackets expect variable data. Alternative uses of Z command using a pipe character (|) & commands requiring both of two arguments in conjunction with the & sign (&).
 
@@ -92,8 +93,8 @@ ___
 
 * talk --ip [ip] & --port [port] | --unbind | --close [index] | --status
   * When using the talk command a subset of all available commands can be used globally. This would be binding the socket to a specific ip & port, unbinding the socket, closing a specific running instance of a talk or checking the status of the socket, weather it's listening for clients or not.
-___
 #### **Commands available in shell mode**
+___
 * list
   * A very commonly used command to list all connected clients, displaying critical information in a table format.
 
@@ -105,8 +106,8 @@ ___
 
 * delete --index [index]
   * This will disconnect a connected client, note that all data about a client will be stored in the aftermath directory.
-___
 #### **Commands available in session mode**
+___
 * break
   * This will break out of the session & reenter shell mode.
 
@@ -199,8 +200,8 @@ ___
 
 * talk --run (--quiet) (--ip [ip] & --port [port])
   * Talk into your microphone from the servers computer & the clients computer will hear it, if you only want to create a sound file you can specify the --quiet argument. The --ip & --port arguments is commonly used if your server is port forwarding.
-___
 #### **Available options**
+___
 * mode/safe
   * The safe mode will guarantee that any command passed to the reverse shell gets killed after Z seconds. The downside is that each command will take about 2 seconds longer to respond.
   
@@ -254,14 +255,14 @@ ___
 
 * notice/email-data/to
   * The emails to send the client connection notice to. This is seperated by comma, supporting multiple emails, but may just be your own email account.
-___
 #### **Server command line arguments**
+___
 * --ipv4 [ipv4]
   * The host servers ip address. The default is localhost.
 * --port [port]
   * The host servers port. The default is 1200.
-___
 #### **Client command line arguments**
+___
 * --ipv4 [ipv4]
   * The ip address of the server. The default is localhost.
 * --port [port]
