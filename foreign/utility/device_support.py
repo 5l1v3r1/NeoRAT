@@ -49,9 +49,9 @@ def device_support(silent, io_channels):
         input_channels = '1'
 
       if io_channels[0] == input_channels:
-        device_obj['io-channels'] = '{}(+), '.format(input_channels)
+        device_obj['io-channels'] = '{}, '.format(input_channels)
       else:
-        device_obj['io-channels'] = '{}(!), '.format(input_channels)
+        device_obj['io-channels'] = '{}, '.format(input_channels)
     except:
       device_obj['io-channels'] = 'None, '
     
@@ -68,9 +68,9 @@ def device_support(silent, io_channels):
         output_channels = '1'
       
       if io_channels[1] == output_channels:
-        device_obj['io-channels'] += '{}(+)'.format(output_channels)
+        device_obj['io-channels'] += '{}'.format(output_channels)
       else:
-        device_obj['io-channels'] += '{}(!)'.format(output_channels)
+        device_obj['io-channels'] += '{}'.format(output_channels)
     except:
       device_obj['io-channels'] += 'None'
 
