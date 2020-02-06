@@ -5,22 +5,22 @@ Free, open-source remote access tool with botnet functionality for Windows.
 Alvin is an open-source TCP application protocol used to control multiple computers transfering requested data over to the server without interference by the client user. Supporting large amount of features with a whide range of options. Alvin demonstrates the possibilities of python used in conjunction with other open-source projects.
 
 ## Installation
-#### Command prompt 1
+**#### Command prompt 1**
 * git clone https://github.com/Alvin-22/Alvin.git
 * cd Alvin
 * pip install -r ~build/requirements.txt
 * Download packages from hyperlinks in ~build/requirements/requirements_not_available_with_pip.txt
 * python server.py
 
-#### Command prompt 2
+**#### Command prompt 2**
 * python client.py
 
 ## EXE installation
-#### Command prompt 1 (server install)
+**#### Command prompt 1 (server install)**
 * cd Alvin
 * pyinstaller -F -i [server icon path] [server script path]
 
-#### Command prompt 2 (client install)
+**#### Command prompt 2 (client install)**
 * cd Alvin
 * pyinstaller -F -w -i [client icon path] [client script path]
 
@@ -60,12 +60,12 @@ The difference between the EXE installations is that the client script is window
 ## Documentation
 Alvin operates in two modes, the first is what's called the "shell" which is the client management mode, controlling things like listing clients, deleting clients & entering sessions with clients. The second mode is the "session" mode, this is the personal interaction mode with Z client, this gives you a reverse shell along with additional commands for a more powerful data collecting experience, this would for example be streaming the clients desktop, webcam or intercepting their audio communications.
 ___
-#### How to construct commands in Alvin
+**#### How to construct commands in Alvin**
 Each command will be parsed & return a dictionary, the syntax for how to construct your commands correctly is as follows, first is the main command also known as the message which is the inital string, then for every argument to the command is prefixed with double dash (--). When dealing with indexes, it's all 0-based, consider 0 the first one. Commands will not care if the letters are lower / higher case unless it's specifically needed & will provide different output, an example of this is when using messagebox command, then you will need to specify the text to display, then the letter casing is taken into consideration.
 
 An example of a command: image --screenshot --monitor 0
 ___
-#### Commands available in both shell & session (globally)
+**#### Commands available in both shell & session (globally)**
 * help
   * Show all available commands & their expected arguments. Optional arguments being surrounded by pareparentheses while brackets expect variable data. Alternative uses of Z command using a pipe character (|) & commands requireing both of two arguments in conjunction with the & sign (&).
 
@@ -94,7 +94,7 @@ ___
   * When using the talk command a subset of all available commands can be used globally. This would be binding the socket to a specific ip & port, unbinding the socket, closing a specific running instance of a talk or checking the status of the socket, weather it's listening for clients or not.
 
 
-#### Commands available in shell mode
+**#### Commands available in shell mode**
 * list
   * A very commonly used command to list all connected clients, this will list the data in a table, displaying critical data of the clients.
 
@@ -107,7 +107,7 @@ ___
 * delete --index [index]
   * This will disconnect a connected client, note that all data about a client will be stored in the aftermath folder.
 
-#### Commands available in session mode
+**#### Commands available in session mode**
 * break
   * This will simply break out of the session & reenter shell mode.
 
@@ -204,7 +204,7 @@ ___
 * talk --run (--quiet) (--ip [ip] & --port [port])
   * Talk into your microphone at the servers computer & the clients computer will play that audio, if you only want to create a sound file you can specify the --quiet argument. The --ip & --port arguments is commonly used if your server is port forwarding & the server ip & port is not the same as the servers.
 
-#### Available options
+**#### Available options**
 * mode/safe
   * The safe mode will garauntee that any command passed to the reverse shell gets killed after specified timeout of domestic/global_state.py file. The downside is that each command will take about 2 seconds longer to respond.
   
@@ -259,13 +259,13 @@ ___
 * notice/email-data/to
   * The emails to send the client connection notice to. This is seperated by comma, this is often just your own email account, but supports any kind of email account, not just gmail. Example of this: example@gmail.com,example@hotmail.com,example@yahoo.com.
 
-#### Server command line arguments
+**#### Server command line arguments**
 * --ipv4 [port]
   * The host servers ip address. The default is localhost.
 * --port [port]
   * The hosting port, all module port sockets will be bound to the port number + 1-4. Default is 1200 & therefore 1201, 1202, 1203, 1204 for the modules.
 
-#### Client command line arguments
+**#### Client command line arguments**
 * --ipv4 [port]
   * The ip address of the server to connect to. The default is localhost.
 * --port [port]
