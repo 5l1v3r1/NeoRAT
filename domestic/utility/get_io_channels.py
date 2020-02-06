@@ -19,7 +19,7 @@ def get_io_channels():
       state['settings']['io-channels'][0] = '2'
     except:
       try:
-        stream = p.open(format=FORMAT, channels=1, rate=RATE, input=True, output=False, frames_per_buffer=CHUNK).stop_stream().close()
+        stream = p.open(format=FORMAT, channels=1, rate=RATE, input=True, output=False, frames_per_buffer=CHUNK)
         stream.stop_stream()
         stream.close()
         state['settings']['io-channels'][0] = '1'

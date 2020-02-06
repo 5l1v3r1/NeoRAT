@@ -19,7 +19,7 @@ state = {
     'keep-alive-count': 60,
     'max-file-size': 75,
     'loading': True,
-    'loading-animation': True,
+    'loading-animation': False,
     'encoding': 'latin-1',
     'headersize': 10,
     'io-channels': [None, None],
