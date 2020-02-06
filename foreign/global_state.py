@@ -19,9 +19,5 @@ state = {
     'running': False,
     'thread': None,
     'first': True
-  },
-  'disable': {
-    'running': False,
-    'thread': None
   }
 }

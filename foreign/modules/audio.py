@@ -26,15 +26,9 @@ def audio_action(ip, port):
   RATE = 44100
   
   try:
-    try:
-      stream = p.open(format=FORMAT, channels=2, rate=RATE, input=True, output=False, frames_per_buffer=CHUNK, as_loopback=True)
-    except:
-      stream = p.open(format=FORMAT, channels=1, rate=RATE, input=True, output=False, frames_per_buffer=CHUNK, as_loopback=True)
+    stream = p.open(format=FORMAT, channels=2, rate=RATE, input=True, output=False, frames_per_buffer=CHUNK)
   except:
-    try:
-      stream = p.open(format=FORMAT, channels=2, rate=RATE, input=True, output=False, frames_per_buffer=CHUNK)
-    except:
-      stream = p.open(format=FORMAT, channels=1, rate=RATE, input=True, output=False, frames_per_buffer=CHUNK)
+    stream = p.open(format=FORMAT, channels=1, rate=RATE, input=True, output=False, frames_per_buffer=CHUNK)
 
   while True:
     try:

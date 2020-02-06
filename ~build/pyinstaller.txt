@@ -1,2 +1,0 @@
-pyinstaller -F -w -i [client icon path] [client script path]
-pyinstaller -F -i [server icon path] [server script path]
