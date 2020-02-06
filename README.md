@@ -196,8 +196,8 @@ ___
 * audio --run (--quiet) (--ip [ip] & --port [port])
   * Listen to the audio from the microphone, if you only want to create a sound file you can specify the --quiet argument. The --ip & --port arguments is commonly used if your server is port forwarding.
 
-* talk --run (--quiet) (--ip [ip] & --port [port])
-  * Talk into your microphone from the servers computer & the clients computer will hear it, if you only want to create a sound file you can specify the --quiet argument. The --ip & --port arguments is commonly used if your server is port forwarding.
+* talk --run (--ip [ip] & --port [port])
+  * Talk into your microphone from the servers computer & the audio will directly be played on the clients computer. The --ip & --port arguments is commonly used if your server is port forwarding.
 #### **Available options**
 ___
 * mode/safe
