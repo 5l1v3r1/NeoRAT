@@ -1,10 +1,10 @@
 ## Alvin
 Free, open-source remote access tool with botnet functionality for Windows.
 
-### Description
+## Description
 Alvin is an open-source TCP application protocol used to control multiple computers transfering requested data over to the server without interference by the client user. Supporting large amount of features with a whide range of options. Alvin demonstrates the possibilities of python used in conjunction with other open-source projects.
 
-### Installation
+## Installation
 **Command prompt 1**
 * git clone https://github.com/Alvin-22/Alvin.git
 * cd Alvin
@@ -15,7 +15,7 @@ Alvin is an open-source TCP application protocol used to control multiple comput
 **Command prompt 2**
 * python client.py
 ___
-### EXE installation
+## EXE installation
 **Command prompt 1 (server install)**
 * cd Alvin
 * pyinstaller -F -i [server icon path] [server script path]
@@ -26,7 +26,7 @@ ___
 
 The difference between the EXE installations is that the client script is windowless (-w), becoming a background process operation without the interference of the user.
 ___
-### Features
+## Features
 * TCP Network Stream (IPv4)
 * Deflate Compression & AES128 Encryption
 * Automatic Documentation
@@ -57,7 +57,7 @@ ___
   * Logout
   * Standby
 ___
-### Documentation
+## Documentation
 Alvin operates in two modes, the first is what's called the "shell" which is the client management mode, controlling things like listing clients, deleting clients & entering sessions with clients. The second mode is the "session" mode, this is the personal interaction mode with Z client, this gives you a reverse shell along with additional commands for a more powerful data collecting experience, this would for example be streaming the clients desktop, webcam or intercepting their audio communications.
 ___
 **How to construct commands in Alvin**
