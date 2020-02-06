@@ -63,7 +63,7 @@ ___
 Each command will be parsed & return a dictionary, the syntax for how to construct your commands correctly is as follows, first is the main command also known as the message which is the inital string, then for every argument to the command is prefixed with double dash (--). When dealing with indexes, it's all 0-based, consider 0 the first one. Commands will not care if the letters are lower / higher case unless it's specifically needed & will provide different output, an example of this is when using messagebox command, were you will need to specify the text to display, then the letter casing is taken into consideration.
 
 An example of a command: image --screenshot --monitor 0
-#### **Commands available in both shell & session (globally)**
+#### **Commands available in both shell & session modes (globally)**
 ___
 * help
   * Show all available commands & their expected arguments. Optional arguments being surrounded by pareparentheses while brackets expect variable data. Alternative uses of Z command using a pipe character (|) & commands requiring both of two arguments in conjunction with the & sign (&).
