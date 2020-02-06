@@ -1,8 +1,8 @@
 ## Neo
-Free, open-source remote access tool with botnet functionality for Windows.
+Free, open-source remote access tool for Windows.
 
 ## Description
-Neo is an open-source TCP application protocol used to control multiple computers transfering requested data over to the server without interference by the client user. Supporting large amount of features with a whide range of options. Neo demonstrates the possibilities of python used in conjunction with other open-source projects.
+Neo is a command to control server, accepting clients to connect, when connected you have the freedom to do anything & everything without the interference of suspicious windows, as a silent background process with the only intention being to serve whatever data requested, this can be a live feed of the clients desktop screen, webcam or listening in to their conversations. Neo can also be used as a botnet, running threaded custom scripts on every connected client simultaneously.
 
 ## Installation
 * git clone https://github.com/Alvin-22/Neo.git && cd Neo
