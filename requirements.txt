@@ -4,6 +4,7 @@ cryptography
 opencv-python
 pillow
 desktopmagic
+pywin32
 pynput
 requests
 tabulate
