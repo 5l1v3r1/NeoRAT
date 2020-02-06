@@ -36,7 +36,6 @@ def cam_action(ip, port, monitor, fps):
 
       if not check:
         cam.release()
-        print('cam')
         raise Exception('No cam')
 
       if fps:
