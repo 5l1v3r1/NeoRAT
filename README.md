@@ -1,4 +1,4 @@
-## NeoRAT
+# NeoRAT
 Free, open-source remote access tool for Windows.
 
 ## Description
