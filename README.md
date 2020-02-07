@@ -30,8 +30,8 @@ The difference between the EXE installations is that the client script is window
 ## Features
 * TCP Network Stream (IPv4)
 * Deflate Compression & AES128 Encryption
-* Automatic Documentation
 * Multi Threaded
+* Automatic Documentation
 * Stable Remote Shell
 * Desktop Stream (Multi Monitor)
 * Cam Stream (Multi Monitor)
