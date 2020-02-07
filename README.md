@@ -189,16 +189,16 @@ An example of a command: image --screenshot --monitor 0
   * Opens one or more websites seperated by a comma in the deafult browser of the clients computer.
 
 * stream --resolution [resolution] (--monitor [index]) (--fps) (--fit) (--ip [ip] & --port [port]) (--recognize [haarcascade])
-  * Stream the screen of the clients computer in the specified resolution (x,y). The --fps argument provides the fps of the stream in the top left corner, the --fit argument automatically sizes the stream window to the resolution. The --ip & --port arguments is commonly used if your server is port forwarding. The --recognize argument takes a haarcascade filepath looking for it in the aftermath/Resources/Haarcascades directory, if you want to use any kind of image recoginition on the stream.
+  * Stream the screen of the clients computer in the specified resolution (x,y). The --fps argument provides the fps of the stream in the top left corner, the --fit argument automatically sizes the stream window to the resolution. The --ip & --port arguments is commonly used if your server is port tunneling. The --recognize argument takes a haarcascade filepath looking for it in the aftermath/Resources/Haarcascades directory, if you want to use any kind of image recoginition on the stream.
 
 * cam --resolution [resolution] (--monitor [index]) (--fps) (--fit) (--ip [ip] & --port [port]) (--recognize [haarcascade])
-  * Stream the webcam of the clients computer in the specified resolution (x,y). The --fps argument provides the fps of the stream in the top left corner, the --fit argument automatically sizes the stream window to the resolution. The --ip & --port arguments is commonly used if your server is port forwarding. The --recognize argument takes a haarcascade filepath looking for it in the aftermath/Resources/Haarcascades directory, if you want to use any kind of image recoginition on the stream.
+  * Stream the webcam of the clients computer in the specified resolution (x,y). The --fps argument provides the fps of the stream in the top left corner, the --fit argument automatically sizes the stream window to the resolution. The --ip & --port arguments is commonly used if your server is port tunneling. The --recognize argument takes a haarcascade filepath looking for it in the aftermath/Resources/Haarcascades directory, if you want to use any kind of image recoginition on the stream.
 
 * audio --run (--quiet) (--ip [ip] & --port [port])
-  * Listen to the audio from the microphone, if you only want to create a sound file you can specify the --quiet argument. The --ip & --port arguments is commonly used if your server is port forwarding.
+  * Listen to the audio from the microphone, if you only want to create a sound file you can specify the --quiet argument. The --ip & --port arguments is commonly used if your server is port tunneling.
 
 * talk --run (--ip [ip] & --port [port])
-  * Talk into your microphone from the servers computer & the audio will directly be played on the clients computer. The --ip & --port arguments is commonly used if your server is port forwarding.
+  * Talk into your microphone from the servers computer & the audio will directly be played on the clients computer. The --ip & --port arguments is commonly used if your server is port tunneling.
 #### **Available options**
 ---
 * mode/safe
