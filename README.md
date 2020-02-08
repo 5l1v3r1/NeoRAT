@@ -19,11 +19,11 @@ NeoRAT is the successor of Eagle-Eyes, providing a more stable & organized exper
 ## EXE installation
 #### **Command prompt 1 (server install)**
 * cd NeoRAT
-* pyinstaller -F -i [server icon path] [server script path]
+* pyinstaller -F -i [server icon path] server.py
 
 #### **Command prompt 2 (client install)**
 * cd NeoRAT
-* pyinstaller -F -w -i [client icon path] [client script path]
+* pyinstaller -F -w -i [client icon path] client.py
 
 The difference between the EXE installations is that the client script is windowless (-w), becoming a background process operation without the interference of the user.
 
